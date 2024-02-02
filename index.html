@@ -4,112 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kuljetus T.Niinimaa Oy</title>
-    <link href="https://webgeneratorserver.skirano.repl.co/static/css/main.css" rel="stylesheet">
-    <style>
-        body, h2, h3, p, a {
-            font-family: 'Arial', sans-serif;
-            color: #334455;
-        }
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-            background-color: #f0f4f8;
-        }
-        .grid {
-            display: grid;
-            grid-gap: 20px;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav, footer {
-            background-color: #e8eff5;
-            padding: 10px 0;
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        form {
-            display: grid;
-            grid-gap: 10px;
-            grid-template-columns: 1fr 1fr;
-            margin-top: 20px;
-        }
-        input, button {
-            padding: 10px;
-            font-size: 1rem;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <nav class="container-fluid">
-        <ul>
-            <li><strong>Kuljetus T.Niinimaa Oy</strong></li>
-        </ul>
-        <ul>
-            <li><a href="#">Etusivu</a></li>
-            <li><a href="#">Palvelut</a></li>
-            <li><a href="#" role="button">Ota yhteyttä</a></li>
-        </ul>
-    </nav>
-    <main class="container">
-        <div class="grid">
-            <section>
-                <hgroup>
-                    <h2>Tervetuloa Kuljetus T.Niinimaa Oy:n kotisivulle</h2>
-                    <h3>Luotettavaa kuljetuspalvelua vuodesta 2014!</h3>
-                </hgroup>
-                <p>Olemme erikoistuneet raskaan kaluston kuljetuksiin koko Pohjois-Euroopassa.</p>
-                <figure>
-                    <img src="https://scontent-hel3-1.xx.fbcdn.net/v/t39.30808-6/368600876_808543160971721_7300346074889063096_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=783fdb&_nc_ohc=rrXqDV3wnL0AX-znGV4&_nc_ht=scontent-hel3-1.xx&oh=00_AfDObBSWKrl6oAw3eyH_RI2cHFX5fTaVkwMQ4twDJ81zHA&oe=65C1F666" alt="Kuljetus T.Niinimaa Oy" />
-                    <figcaption>Kuva: Kuljetus T.Niinimaa Oy Facebook</figcaption>
-                </figure>
-                <h3>Palvelumme</h3>
-                <p>Kattavat kuljetusratkaisut teollisuuden tarpeisiin.</p>
-                <h3>Facebook Päivitykset</h3>
-                <p>Seuraa meitä Facebookissa saadaksesi viimeisimmät päivitykset.</p>
-            </section>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <nav id="header" class="bg-white fixed w-full z-10 top-0 shadow">
+        <div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
+            <div class="w-1/2 pl-2 md:pl-0">
+                <a class="text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold" href="#">
+                    <img src="PATH_TO_YOUR_LOGO_IMAGE" alt="Kuljetus T.Niinimaa Oy Logo" class="h-8 fill-current inline">
+                    Kuljetus T.Niinimaa Oy
+                </a>
+            </div>
+            <div class="w-1/2 pr-0">
+                <div class="flex relative inline-block float-right">
+                    <div class="relative text-sm">
+                        <button id="userButton" class="flex items-center focus:outline-none mr-3">
+                            <span class="hidden md:inline-block">Hi, User</span>
+                            <svg class="pl-2 h-2" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+                                <g>
+                                    <path d="m121.3,34.6c-1.4-1.4-3.6-1.4-5,0l-46.3,46.3-46.3-46.3c-1.4-1.4-3.6-1.4-5,0-1.4,1.4-1.4,3.6 0,5l51,51.1c0.7,0.7 1.6,1 2.5,1s1.8-0.3 2.5-1l51-51.1c1.5-1.4 1.5-3.6 0.1-5z"></path>
+                                </g>
+                            </svg>
+                        </button>
+                        <div id="userMenu" class="bg-white nunito rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
+                            <!-- User Menu -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
-    <section aria-label="Subscribe example">
-        <div class="container">
-            <article>
-                <hgroup>
-                    <h2>Ota Yhteyttä</h2>
-                    <h3>Lähetä meille viesti</h3>
-                </hgroup>
-                <form class="grid" action="YOUR_SERVER_ENDPOINT" method="POST">
-                    <input type="text" id="firstname" name="firstname" placeholder="Nimesi" aria-label="Nimesi" required>
-                    <input type="email" id="email" name="email" placeholder="Sähköpostisi" aria-label="Sähköpostisi" required>
-                    <button type="submit" onclick="event.preventDefault()">Lähetä</button>
-                </form>
-            </article>
+    </nav>
+
+    <div class="container shadow-lg mx-auto bg-white mt-24 md:mt-18">
+        <div class="py-8">
+            <div class="flex flex-wrap md:flex-no-wrap space-x-2">
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-bold text-gray-800">Tervetuloa Kuljetus T.Niinimaa Oy:n kotisivulle</h2>
+                    <p class="text-gray-600 mt-4">Luotettavaa kuljetuspalvelua vuodesta 2014!</p>
+                    <img class="w-full md:w-4/5 z-50" src="https://source.unsplash.com/random/1280x720?truck" />
+                </div>
+                <div class="w-full md:w-1/3 space-y-4">
+                    <div class="w-full">
+                        <h3 class="text-xl font-bold text-gray-800">Palvelumme</h3>
+                        <p class="text-gray-600 mt-2">Kattavat kuljetusratkaisut teollisuuden tarpeisiin.</p>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-xl font-bold text-gray-800">Facebook Päivitykset</h3>
+                        <p class="text-gray-600 mt-2">Seuraa meitä Facebookissa saadaksesi viimeisimmät päivitykset.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-white py-8">
+        <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
+            <nav id="store" class="w-full z-30 top-0 px-6 py-1">
+                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
+                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
+                        Palvelut
+                    </a>
+                </div>
+            </nav>
+            <!-- Add Services Here -->
         </div>
     </section>
-    <footer class="container">
-        <small>
-            <a href="#">Tietosuojakäytäntö</a> • <a href="#">Käyttöehdot</a>
-        </small>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-8">
+            <div class="w-full flex flex-col md:flex-row py-6">
+                <div class="flex-1 mb-6">
+                    <a class="text-orange-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+                        <!-- Add Your Logo Here -->
+                    </a>
+                </div>
+                <div class="flex-1">
+                    <p class="uppercase text-gray-500 md:mb-6">Linkit</p>
+                    <ul class="list-reset mb-6">
+                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">FAQ</a>
+                        </li>
+                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Ohjeet</a>
+                        </li>
+                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Tuki</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-1">
+                    <p class="uppercase text-gray-500 md:mb-6">Oikeudelliset</p>
+                    <ul class="list-reset mb-6">
+                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Tietosuojakäytäntö</a>
+                        </li>
+                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Käyttöehdot</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-1">
+                    <p class="uppercase text-gray-500 md:mb-6">Yhteisö</p>
+                    <ul class="list-reset mb-6">
+                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Facebook</a>
+                        </li>
+                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-blue-600">
+            <div class="container mx-auto px-8">
+                <div class="w-full flex flex-col md:flex-row py-6">
+                    <div class="flex-1 flex flex-col md:flex-row justify-between items-center">
+                        <a href="#" class="uppercase px-3">Back to top</a>
+                        <p class="md:px-3">&copy;2024 Kuljetus T.Niinimaa Oy. Kaikki oikeudet pidätetään.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+    
+    <script>
+        // Placeholder for potential JavaScript
+        // For example, to handle form submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Handle the form submission here
+        });
+    </script>
 </body>
 </html>
